@@ -138,10 +138,10 @@ def is_prime_Miller_Rabin(n):
             num = pow(a, power, n)
             if (num ** 2) % n == 1:
                 if num == 1 or num == n - 1:
-                    if boolen != a_total:
+                    if boolen != a_total: #a的其中一个取值正确
                         boolen += 1
                         break
-                    else: # a = 2 和 a = 3 的情况都对
+                    else: # a的所有取值均正确
                         time_end = time.time()
                         return time_end - time_start, True
                 else:
